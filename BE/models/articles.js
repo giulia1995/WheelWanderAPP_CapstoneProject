@@ -1,25 +1,26 @@
 const mongoose = require('mongoose');
 
-const ArticlesSchema = new mongoose.Schema({
+const ArticleSchema = new mongoose.Schema({
+    cover:{
+        type: String,
+        required: false,
+        default: "https://picsum.photos/600/400"
+    },
     articleName:{
         type: String,
-        required: true,
-        max: 255
+        required: true   
     },
     rentTimeDay:{
         type: String,
-        required: true,
-        max: 200
+        required: true     
     },
     rentTimeWeek:{
         type: String,
-        required: true,
-        max: 200
+        required: true       
     },
-    articleDescpription:{
+    articleDescription:{
         type: String,
-        required: true,
-        max: 250
+        required: true       
     },
     priceForDay:{
         type: mongoose.Types.Decimal128,
@@ -38,4 +39,6 @@ const ArticlesSchema = new mongoose.Schema({
 
 
 }, {timestamps: true, strict: true})
-module.exports = mongoose.model("articlesModel", ArticlesSchema, "articles")
+
+
+module.exports = mongoose.model('ArticlesModel', ArticleSchema, 'articles')

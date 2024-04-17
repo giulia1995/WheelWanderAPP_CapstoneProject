@@ -7,12 +7,13 @@ const PORT = 4040;
 const app = express();
 
 //import routes
-const articlesRoutes= require ('./routes/articles');
+const articlesRoute= require('./routes/articles');
 
 //middleware
-
 app.use(express.json());
-app.use('/', articlesRoutes);
+
+
+app.use('/', articlesRoute);
 
 
 //connecting database

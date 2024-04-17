@@ -1,0 +1,23 @@
+POST http://localhost:4040/createArticle
+Content-Type: application/json
+
+{
+    "articleName": "Scooter 125",
+    "rentTimeDay": "Giornaliero (24 ore)",
+    "rentTimeWeek": "Settimanale (6 giorni)",
+    "articleDescription": "Noleggia i nostri scooter ed esplora in totale libertà ",
+    "priceForDay": 55.00,
+    "priceForWeek": 300.00,
+    "caution": "Cauzione 100,00"
+}
+
+####
+GET http://localhost:4040/getArticles
+
+####
+PATCH http://localhost:4040/article/update/661fddf2cbc226733491704c
+Content-Type: application/json
+
+
+####
+DELETE http://localhost:4040/article/delete/661fddf2cbc226733491704c
