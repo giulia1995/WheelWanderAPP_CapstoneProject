@@ -2,10 +2,10 @@ POST http://localhost:4040/createAdmin
 Content-Type: application/json
 
 {
-    "firstName": "Giulia",
+    "firstName": "Mirko",
     "lastName":"Vaccaro",
-    "email":"giulia@sample.it",
-    "password":"admin1234"
+    "email":"mirko@sample.it",
+    "password":"admin3456"
 }
 
 ####

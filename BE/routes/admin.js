@@ -1,6 +1,8 @@
 const express = require('express');
 const admin = express.Router();
 const AdminModel = require('../models/admin');
+const validateAdminBody = require ('../middlewares/validateAdminBody');
+const bcrypt = require ('bcrypt');
 
 
 //Endpoint for CRUD operations on Admin
@@ -18,12 +20,14 @@ admin.get('/getAdmin', async (req, res)=>{
 })
 
 //Endpoint to creat new Admin
-admin.post('/createAdmin', async (req, res) =>{
+admin.post('/createAdmin',validateAdminBody, async (req, res) =>{
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = await bcrypt.hash(req.body.password, salt)
     const newAdmin = new AdminModel({
         firstName : req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.password
+        password: hashedPassword
     });
     try{
         const adminToSave = await newAdmin.save();
