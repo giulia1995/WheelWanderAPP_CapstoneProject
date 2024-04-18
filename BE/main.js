@@ -8,12 +8,14 @@ const app = express();
 
 //import routes
 const articlesRoute= require('./routes/articles');
+const adminRoute = require ('./routes/admin');
 
 //middleware
 app.use(express.json());
 
 
 app.use('/', articlesRoute);
+app.use('/', adminRoute);
 
 
 //connecting database
