@@ -1,6 +1,70 @@
 const express = require('express');
 const articles = express.Router();
 const ArticlesModel = require('../models/articles');
+const multer = require('multer');
+const cloudinary = require ('cloudinary').v2;
+const {CloudinaryStorage} = require('multer-storage-cloudinary');
+const { restart } = require('pm2');
+require ('dotenv').config ();
+
+//Configuring cloudinary for external image storage
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+//Configuring multer for internal image storage
+const internalStorage = multer.diskStorage({
+  destination: (req, file, cb)=>{
+    cb(null, 'uploads');
+  },
+  filename: (req, file, cb) =>{
+    const fileExtension = file.originalname.split('.').pop();
+    //generating unique filename with current timestamp
+    cb(null, `${file.fieldname} - ${new Date().toISOString()}.${fileExtension}`);
+  },
+});
+
+//Configuring cloudinary storage for image uploads
+const cloudStorage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params:{
+    folder: 'PT043', //cloudinary folder for storing images
+    public_id: (req, file)=> file.name,
+  },
+});
+
+const upload= multer({storage: internalStorage}); //using interna storage for multer
+const cloudUpload = multer ({storage: cloudStorage}); //using cloudinary storage for multer
+
+//Endpoint for uploading images to cloudinary
+articles.post(`/articles/cloudUploadingImg`, cloudUpload.single(`uploadImg`),
+async (req, res)=>{
+  try{
+    res.status(200).json({source:req.file.path}); //sending cloudinary image path
+  } catch(e) {
+    res.status(500).send({
+      statusCode: 500,
+      message:'File Upload Error',
+    });
+  }
+});
+
+//Endpoint for uploading images to internal file system
+articles.post(`/articles/uploadingImg`, upload.single('uploadImg'), async (req, res)=>{
+  const url = req.protocol + '://' + req.get('host');
+  try{
+    const imageUrl = req.file.filename;
+    res.status(200).json({ source: `${url}/uploads/${imageUrl}`});
+  } catch(e){
+    res.status(500).send({
+      statusCode: 500,
+      message: 'File Upload Error'
+    });
+  }
+});
 
 //Endpoint to retrive for CRUD operations on articles
 
