@@ -4,7 +4,6 @@ const ArticlesModel = require('../models/articles');
 const multer = require('multer');
 const cloudinary = require ('cloudinary').v2;
 const {CloudinaryStorage} = require('multer-storage-cloudinary');
-const { restart } = require('pm2');
 require ('dotenv').config ();
 
 //Configuring cloudinary for external image storage
@@ -68,7 +67,7 @@ articles.post(`/articles/uploadingImg`, upload.single('uploadImg'), async (req, 
 
 //Endpoint to retrive for CRUD operations on articles
 
-articles.get('/getArticles', async (req, res) => {
+articles.get('/Articles', async (req, res) => {
   try {
    
     const articles = await ArticlesModel.find()

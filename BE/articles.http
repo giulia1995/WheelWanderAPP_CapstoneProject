@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ####
-GET http://localhost:4040/getArticles
+GET http://localhost:4040/Articles
 
 ####
 PATCH http://localhost:4040/article/update/661fddf2cbc226733491704c
