@@ -1,0 +1,15 @@
+.footer{
+    padding-top: 30px;
+    background-color: #E94D1B;
+    color: white;
+}
+.socialIcons{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+}
+
+.icon {
+    color: white;
+  }

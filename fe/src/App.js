@@ -1,10 +1,22 @@
-import './App.css';
-import MainLayout from './layouts/MainLayouts';
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+const App = () => {
   return (
-    <MainLayout/>
-  );
+    <Router>
+            <Routes>
+                <Route exact path="/" element={<Home/>} />
+               
+           
+                    
+            </Routes>
+        </Router>
+  )
 }
 
 export default App;
