@@ -15,8 +15,12 @@ Content-Type: application/json
 GET http://localhost:4040/Articles
 
 ####
-PATCH http://localhost:4040/article/update/661fddf2cbc226733491704c
+PATCH http://localhost:4040/article/update/662518844572d9932e13d3bb
 Content-Type: application/json
+
+{
+   "caution": "Cauzione 100,00€"
+}
 
 
 ####
