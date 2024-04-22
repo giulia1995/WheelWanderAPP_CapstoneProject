@@ -4,3 +4,15 @@
     background-repeat: no-repeat;
     height: 100vh;
 }
+.title{
+    color: white;
+    font-weight:bold;
+    text-align: center;
+    padding-top: 300px;
+}
+.subtitle{
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+}

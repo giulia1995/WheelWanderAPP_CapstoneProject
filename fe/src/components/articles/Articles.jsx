@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
+import styles from './articles.module.css'
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -31,6 +32,7 @@ const Articles = () => {
 
   return (
     <Container>
+      <h1 className={`${styles.title}`}>LA NOSTRA FLOTTA</h1>
       <Row className="justify-content-center">
         {loading ? (
           <div>Loading...</div>
@@ -39,15 +41,13 @@ const Articles = () => {
         ) : (
           articles.map((article) => (
             <Col key={article._id} xs={12} sm={6} md={4} lg={3}>
-              <Card className="my-3">
+              <Card className={`${styles.cardEffect}`}>
                 <Card.Img variant="top" src={article.cover} />
                 <Card.Body>
-                  <Card.Title>{article.articleName}</Card.Title>
+                  <Card.Title className={`${styles.cardTitle}`}>{article.articleName}</Card.Title>
                   <Card.Text>{article.articleDescription}</Card.Text>
-                  <Card.Text>{article.rentTimeDay}</Card.Text>
-                  <Card.Text>{article.rentTimeWeek}</Card.Text>
-                  <Card.Text>{article.priceForDay.$numberDecimal}&euro;</Card.Text>
-                  <Card.Text>{article.priceForWeek.$numberDecimal}&euro;</Card.Text>
+                  <Card.Text>{article.rentTimeDay} - {article.priceForDay.$numberDecimal}&euro;</Card.Text>
+                  <Card.Text>{article.rentTimeWeek} - {article.priceForWeek.$numberDecimal}&euro;</Card.Text>
                   <Card.Text>{article.caution}</Card.Text>
                
                 </Card.Body>

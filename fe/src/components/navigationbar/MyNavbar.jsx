@@ -9,16 +9,16 @@ const MyNav = () => {
 
   return (
     <>
-      <Navbar className={`${styles.bgColour}`} data-bs-theme="dark">
+      <Navbar className={`${styles.bgColour}`}>
         <Container className='justify-content-between'>
           <div className='d-flex align-items-center'>
             <Navbar.Brand href="/">
               <Image className={`${styles.logo}`} src={logo} alt="Logo" />
             </Navbar.Brand>
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link className='text-white align-items-center fw-bold' href="/">Home</Nav.Link>
           </div>
           <div>
-          <Nav.Link href="/adminLogin"><FaUserCog  className={`${styles.userAdmin}`} /></Nav.Link>
+          <Nav.Link href="/adminLogin"><FaUserCog className={`${styles.userAdmin}`} /></Nav.Link>
           </div>
         </Container>
       </Navbar>
