@@ -2,13 +2,14 @@ POST http://localhost:4040/createArticle
 Content-Type: application/json
 
 {
-    "articleName": "Scooter 125",
+    "cover": "https://m.media-amazon.com/images/I/51Tx+HlbgmL._AC_.jpg",
+    "articleName": "Baby Bike",
     "rentTimeDay": "Giornaliero (24 ore)",
     "rentTimeWeek": "Settimanale (6 giorni)",
-    "articleDescription": "Noleggia i nostri scooter ed esplora in totale libertà ",
-    "priceForDay": 55.00,
-    "priceForWeek": 300.00,
-    "caution": "Cauzione 100,00"
+    "articleDescription": "Abbiamo pensato proprio a tutti! La baby bike permetterà a te ed il tuo bambino di scoprire il paesaggio circostante in totale sicurezza!",
+    "priceForDay": 10.00,
+    "priceForWeek": 30.00,
+    "caution": "Cauzione 40,00€"
 }
 
 ####
@@ -19,7 +20,7 @@ PATCH http://localhost:4040/article/update/662518844572d9932e13d3bb
 Content-Type: application/json
 
 {
-   "caution": "Cauzione 100,00€"
+   "articleDescription": "125cc per vivere la nostra graziosa cittadina in totale relax!"
 }
 
 
