@@ -5,3 +5,12 @@
 .logo{
     width: 200px;
 }
+
+.userAdmin{
+    font-size: 30px;
+    color: white;
+}
+.userAdmin:hover{
+    
+    transform: scale(1.2);
+}

@@ -17,7 +17,7 @@ const useSession = () => {
         if (session && location.pathname !== '/'){
             return;
         }
-        navigate('/home', {replace: true})
+        navigate('/', {replace: true})
 
     }, [navigate, session]);
 
