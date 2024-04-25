@@ -25,7 +25,7 @@ const LoginForm = ({ toggleForm }) => {
         // Storing token in local storage and redirecting to home page
         localStorage.setItem("auth", JSON.stringify(response.token));
         setTimeout(() => {
-          navigate("/");
+          navigate("/HomeAdmin");
         }, 1500);
       }
     } catch (error) {

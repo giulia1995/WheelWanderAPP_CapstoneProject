@@ -17,3 +17,30 @@
 .cardEffect:hover{
     transform: scale(1.02);
 }
+
+.titleAdmin{
+   display: flex;
+   justify-content: space-between;
+    color: black;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.cardEffectAdmin{
+    display: block;
+    align-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    -webkit-box-shadow: 14px -7px 29px -12px #000000; 
+    box-shadow: 14px -7px 29px -12px #000000;
+}
+.cardEffectAdmin:hover{
+    transform: scale(1.02);
+}
+.button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    align-content: center;
+}
