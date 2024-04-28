@@ -1,6 +1,17 @@
 .textColor{
-    color: #E94D1B;
+    color: white;
     text-align: center;
     font-weight: bold;
     margin-top: 50px;
+}
+.card{
+   max-width: 500px;
+   margin:auto;
+}
+
+.passwordToggle{
+    color: #E94D1B;
+}
+.passwordToggle:hover{
+    color: #E94D1B;
 }

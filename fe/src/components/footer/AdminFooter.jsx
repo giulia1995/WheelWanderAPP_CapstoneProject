@@ -18,7 +18,7 @@ const AdminFooter = () => {
             <h5>Contatti</h5>
             <p>
               Indirizzo: Via delle Ruote, 123 <br />
-              Città: Wanderland <br />
+              Città: Terrasini, PA <br />
               Telefono: +123 456 789 <br />
               Email: info@wheelwander.com
             </p>

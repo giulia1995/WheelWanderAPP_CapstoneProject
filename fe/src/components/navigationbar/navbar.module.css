@@ -7,7 +7,6 @@
 }
 
 .userAdmin{
-    font-size: 30px;
     color: white;
 }
 .userAdmin:hover{
@@ -16,4 +15,8 @@
 }
 .bgColourAdmin{
     background-color:black;
+}
+.login{
+    padding-right:80px;
+    padding-left: 80px;
 }

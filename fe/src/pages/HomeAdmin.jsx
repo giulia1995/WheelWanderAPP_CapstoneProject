@@ -18,4 +18,4 @@ const HomeAdmin = () => {
     )
 }
 
-export default HomeAdmin
+export default HomeAdmin;

@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import AxiosClient from "../../client/client";
 import { useNavigate } from "react-router-dom";
-import style from '../loginForm/loginForm.module.css'
-
+import style from '../loginForm/loginForm.module.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importa le icone
 
 // LoginForm component for user login
 const LoginForm = ({ toggleForm }) => {
-  // State variables for managing form data and error
+  // State variables for managing form data, error, and password visibility
   const [formData, setFormData] = useState({});
   const [error, setError] = useState(null);
+  const [showPassword, setShowPassword] = useState(false); // Nuovo stato per la visibilità della password
 
   // Initializing AxiosClient and useNavigate
   const client = new AxiosClient();
@@ -46,45 +47,24 @@ const LoginForm = ({ toggleForm }) => {
     });
   };
 
-
-  // State variable and function to manage error alert visibility
-  const [showError, setShowError] = useState(true);
-  const handleCloseError = () => {
-    setShowError(false);
-  };
-
-  // Style for positioning error alert
-  const alertStyle = {
-    position: "absolute",
-    top: "550px",
-    left: "45px",
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   // JSX for rendering the component
   return (
     <>
-      <h2 className={`${style.textColor}`}>AdminLogin</h2>
-
-      {error && showError && (
-        <div style={alertStyle} className="alert alert-danger" role="alert">
+      {error && (
+        <div className={`alert alert-danger ${style.errorAlert}`} role="alert">
           {error}
-          <button
-            type="button"
-            className="btn-close"
-            aria-label="Chiudi"
-            onClick={handleCloseError}
-          ></button>
         </div>
       )}
 
-      <form onSubmit={onSubmit} className="card-body p-lg-5">
-        <div className="text-center">
-          <img
-            src="https://picsum.photos/340/340"
-            className="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-            width="200px"
-            alt="profile"
-          />
+      <form onSubmit={onSubmit} className={`${style.card} card-body`}>
+        <h2 className={`${style.textColor}`}>Admin Login</h2>
+        <div className="text-center m-5 text-white">
+          Sei un amministratore? <br /> <span className="fw-bold">Accedi qui per la gestione</span>
         </div>
 
         <div className="mb-3">
@@ -99,18 +79,27 @@ const LoginForm = ({ toggleForm }) => {
         </div>
 
         <div className="mb-3">
-          <input
-            onChange={onChangeInput}
-            type="password"
-            className="form-control"
-            name="password"
-            placeholder="Inserisci la tua password"
-          />
+          <div className="input-group">
+            <input
+              onChange={onChangeInput}
+              type={showPassword ? "text" : "password"} // Usa lo stato per determinare il tipo di input
+              className="form-control"
+              name="password"
+              placeholder="Inserisci la tua password"
+            />
+            <button
+              type="button"
+              className={`btn btn-light ${style.passwordToggle}`}
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? <FaEye /> : <FaEyeSlash />} {/* Mostra l'icona corrispondente */}
+            </button>
+          </div>
         </div>
 
         <div className="text-center">
           <button type="submit" className="btn btn-primary px-5 mb-5 w-100">
-            Login
+            Accedi
           </button>
         </div>
       </form>

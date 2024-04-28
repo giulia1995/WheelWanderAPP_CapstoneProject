@@ -1,0 +1,8 @@
+.body{
+    background-color:rgb(68, 67, 67);
+    height: 100vh;
+}
+.card{
+    align-content: center;
+    width: 100%;
+}

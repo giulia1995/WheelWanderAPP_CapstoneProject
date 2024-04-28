@@ -1,0 +1,29 @@
+.contatti-page {
+    padding: 50px 0;
+  }
+  
+  .contatti-heading {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .address, .contact-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .address h4, .contact-info h4 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .address p, .contact-info p {
+    margin-bottom: 10px;
+  }
+  
+  .contact-info p {
+    font-weight: bold;
+  }
+  
