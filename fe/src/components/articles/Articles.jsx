@@ -45,10 +45,10 @@ const Articles = () => {
                 <Card.Img variant="top" src={article.cover} />
                 <Card.Body>
                   <Card.Title className={`${styles.cardTitle}`}>{article.articleName}</Card.Title>
-                  <Card.Text>{article.articleDescription}</Card.Text>
-                  <Card.Text>{article.rentTimeDay} - {article.priceForDay.$numberDecimal}&euro;</Card.Text>
-                  <Card.Text>{article.rentTimeWeek} - {article.priceForWeek.$numberDecimal}&euro;</Card.Text>
-                  <Card.Text>{article.caution}</Card.Text>
+                  <Card.Text className={`${styles.cardText}`}>{article.articleDescription}</Card.Text>
+                  <Card.Text className={`${styles.cardExtra}`} >{article.rentTimeDay} - {article.priceForDay.$numberDecimal}&euro;</Card.Text>
+                  <Card.Text className={`${styles.cardExtra}`}>{article.rentTimeWeek} - {article.priceForWeek.$numberDecimal}&euro;</Card.Text>
+                  <Card.Text className={`${styles.cardExtra}`}>{article.caution}</Card.Text>
                
                 </Card.Body>
               </Card>

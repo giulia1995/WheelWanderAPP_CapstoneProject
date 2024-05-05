@@ -3,7 +3,8 @@
   }
   
   .contatti-heading {
-    text-align: center;
+    color: #E94D1B;
+    font-weight: bold;
     margin-bottom: 30px;
   }
   
@@ -25,5 +26,11 @@
   
   .contact-info p {
     font-weight: bold;
+  }
+  .button{
+    margin-top: 10px;
+    background-color: #E94D1B !important;
+    border: #E94D1B !important;
+    font-weight: bold !important;
   }
   

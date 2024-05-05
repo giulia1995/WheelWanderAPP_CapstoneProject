@@ -9,6 +9,7 @@
     font-weight: bold !important;
 }
 .cardEffect{
+    
     margin-top: 20px;
     margin-bottom: 20px;
     -webkit-box-shadow: 14px -7px 29px -12px #000000; 
@@ -29,7 +30,7 @@
 .cardEffectAdmin{
     display: block;
     align-content: center;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
     -webkit-box-shadow: 14px -7px 29px -12px #000000; 
     box-shadow: 14px -7px 29px -12px #000000;
@@ -43,4 +44,10 @@
     justify-content: center;
     align-items: center; 
     align-content: center;
+}
+.cardText{
+   font-weight: bold !important;
+}
+.cardExtra{
+    color: #E94D1B !important;
 }

@@ -143,17 +143,17 @@ const Articles = () => {
                   </Col>
                   <Col xs={12} md={6}>
                     <Card.Body>
-                      <Card.Title className={`${styles.cardTitle}`}>{article.articleName}</Card.Title>
-                      <Card.Text>{article.articleDescription}</Card.Text>
-                      <Card.Text>{article.rentTimeDay} - {article.priceForDay.$numberDecimal}&euro;</Card.Text>
-                      <Card.Text>{article.rentTimeWeek} - {article.priceForWeek.$numberDecimal}&euro;</Card.Text>
-                      <Card.Text>{article.caution}</Card.Text>
+                      <Card.Title className={`${styles.cardTitle} mt-5`}>{article.articleName}</Card.Title>
+                      <Card.Text className={`${styles.cardText}`}>{article.articleDescription}</Card.Text>
+                      <Card.Text className={`${styles.cardExtra}`}>{article.rentTimeDay} - {article.priceForDay.$numberDecimal}&euro;</Card.Text>
+                      <Card.Text className={`${styles.cardExtra}`}>{article.rentTimeWeek} - {article.priceForWeek.$numberDecimal}&euro;</Card.Text>
+                      <Card.Text className={`${styles.cardExtra}`}>{article.caution}</Card.Text>
                     </Card.Body>
                   </Col>
                   <Col xs={12} md={2} className={`${styles.button}`}>
                     <div>
                       <Button variant="primary" className="mb-2 d-block" onClick={() => openModal(article)}>Modifica</Button>
-                      <Button variant="danger" className="d-block" onClick={() => handleDelete(article._id)}>Elimina</Button>
+                      <Button variant="danger" className="mb-2 d-block" onClick={() => handleDelete(article._id)}>Elimina</Button>
                     </div>
                   </Col>
                 </Row>

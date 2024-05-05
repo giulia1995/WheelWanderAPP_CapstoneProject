@@ -179,20 +179,27 @@ const AddArticleModal = () => {
 
       {/* Alert component for displaying success/error messages */}
       <Alert
-        show={showAlert}
-        variant={errorAlert ? "danger" : "success"}
-        onClose={() => setShowAlert(false)}
-        dismissible
-        style={{
-          position: "fixed",
-          bottom: 250,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 9999,
-        }}
-      >
-        {alertMessage}
-      </Alert>
+    show={showAlert}
+    variant={errorAlert ? "danger" : "success"}
+    onClose={() => setShowAlert(false)}
+    dismissible
+    style={{
+        position: "fixed",
+        bottom: 30, // Aumenta leggermente la distanza dal basso
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 9999,
+        maxWidth: 400, // Aumenta leggermente la larghezza massima
+        fontSize: "1rem", // Ripristina la dimensione del testo
+        padding: "1rem", // Aumenta leggermente il padding
+        display: "grid",
+        gridTemplateColumns: "auto 30px", // Larghezza automatica per il testo, 30px per il pulsante
+        alignContent: "center", // Centra verticalmente
+        gap: "10px", // Aggiungi spazio tra il testo e il pulsante
+    }}
+>
+    {alertMessage}
+</Alert>
     </>
   );
 };
